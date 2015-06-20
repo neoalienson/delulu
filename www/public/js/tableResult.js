@@ -61,7 +61,8 @@ $(document).ready(function() {
 	aTblRslt.getLedgerData('rLooCSzCeV', function() {
 		var aJTbl=$('#wrapper').DataTable();
 
-		aJTbl.column(0).data().sort();
+		aJTbl.column(0).data().sort(); // a way to "sort" but seems not ok to "desc"
+		//aJTbl.order( [ 1, 'asc' ] );
 
 		$('#wrapperContainer').css({ display: 'block' });
 	});
