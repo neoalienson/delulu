@@ -29,13 +29,20 @@ var Index = React.createClass({
     }
 });
 
+var SignUp = require('./signup');
+var Employer = require('./employer');
+
 var routes = (
     <Route handler={Main}>
         <DefaultRoute handler={Index}/>
         <Route name="index" path="" handler={Index}/>
+        <Route name="signup" path="/signup" handler={SignUp}/>
+        <Route name="employer" path="/employer" handler={Employer}/>
     </Route>
 );
 
 Router.run(routes, function (Handler/*, state*/) {
     React.render(<Handler/>, document.body);
 });
+
+Parse.initialize("Lq8BpgkIo7aoDpDOHjeqrKip6uH84elKKgLISFJW", "yFpw0CA2mI2fsGAU4YbGnEFUg5enFiVIYjuhvIHv");
