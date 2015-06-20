@@ -2,6 +2,7 @@
  * Created by lsiu on 6/20/2015.
  */
 var React = require('react')
+var UserStore = require('./stores/user');
 
 function _getStatusStyle(status) {
     switch (status) {
@@ -41,14 +42,20 @@ var SignUp = React.createClass({
             type: {value:"employer", status:""}
         }
     },
-    render: function () {        
-        return (      
+    componentWillMount: function () {
+        UserStore.on(UserStore.EventTypes.USER_CREATED, this.handleUserCreated);
+    },
+    componentWillUnmount: function () {
+        UserStore.removeListener(UserStore.EventTypes.USER_CREATED, this.handleUserCreated);
+    },
+    render: function () {
+        return (
             <div className="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-    
+                <h1>Sign up</h1>
                 <div className="form-group">
                     <label htmlFor="type">I am a</label>
-                    <select className="form-control" id="type" onChange={this.handleChange}>
-                        <option value="employer" selected>employer of domestic helper</option>
+                    <select className="form-control" id="type" onChange={this.handleChange} defaultValue={this.state.type.value}>
+                        <option value="employer">employer of domestic helper</option>
                         <option value="helper">domestic helper</option>
                     </select>
                 </div>
@@ -88,33 +95,14 @@ var SignUp = React.createClass({
         this.setState(this.state);
     },
     handleSignUp: function () {
-        var household;
-
-        if (this.state.householdName.id) {
-            household = this.state.householdName.id;
-        } else {
-            var Household = Parse.Object.extend("Household");
-            household = new Household();
-            household.set("name", this.state.householdName.value);
-        }
-
-        var user = new Parse.User();
-
-        user.set("username", this.state.email.value);
-        user.set("password", this.state.password.value);
-        user.set("email", this.state.email.value);
-        user.set("type", this.state.type.value);
-        user.set("parent", household);
+        var h = { id: this.state.householdName.id, value: this.state.householdName.value };
+        var u = { email: this.state.email.value, password: this.state.password.value, type: this.state.type.value };
 
         var that = this;
-        user.signUp(null, {
-            success: function (user) {
-                that.context.router.transitionTo("/#/helper");
-            },
-            error: function (user, error) {
+        UserStore.createUser(h, u, null, function (user, error) {
                 alert("Error: " + error.code + " " + error.message);
             }
-        });
+        );
 
     },
     handleHouseholdBlur: function (ev) {
@@ -157,6 +145,9 @@ var SignUp = React.createClass({
             }
         });
 
+    },
+    handleUserCreated : function() {
+        this.context.router.transitionTo("/#/helper");
     }
 });
 
