@@ -10,6 +10,7 @@
 
 @interface HelperViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UITableView* tableViewRecent;
+    IBOutlet UILabel* lblBalance;
 }
 @property (strong, nonatomic) NSMutableArray *arrayRecent;
 

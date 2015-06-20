@@ -8,6 +8,7 @@
 
 #import "HelperSignUpViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface HelperSignUpViewController ()
 
@@ -16,8 +17,20 @@
 @implementation HelperSignUpViewController
 
 -(void)viewDidLoad {
+    txtFldName.placeholder = @"  Your name";
     txtFldUsername.placeholder = @"  Username";
     txtFldPassword.placeholder = @"  Password";
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Household"];
+    
+    appDelegate.householdId = @"adoCJNucQR";
+    
+    [query getObjectInBackgroundWithId:appDelegate.householdId block:^(PFObject *household, NSError *error) {
+        self->lblWelcome.text = [NSString stringWithFormat:@"Welcome to %@", household[@"name"]];
+    }];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -28,15 +41,22 @@
     
     [actIndicatorViewMain startAnimating];
     
-    PFObject *row = [PFObject objectWithClassName:@"User"];
-    row[@"username"] = self->txtFldUsername;
-    row[@"password"] = self->txtFldPassword;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    PFObject *row = [PFObject objectWithClassName:@"Users"];
+    row[@"username"] = self->txtFldUsername.text;
+    row[@"password"] = self->txtFldPassword.text;
+    row[@"name"] = self->txtFldName.text;
     row[@"type"] = @"helper";
+    row[@"parent"] = [PFObject objectWithoutDataWithClassName:@"Household" objectId:appDelegate.householdId];
     
     [row saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [actIndicatorViewMain stopAnimating];
         if (succeeded) {
-            [self performSegueWithIdentifier:@"Login" sender:nil];
+            [appDelegate setIsBoss:FALSE];
+
+            appDelegate.userId = row.objectId;
+            [self performSegueWithIdentifier:@"SignUpComplete" sender:nil];
         } else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:@"Fail to create user"

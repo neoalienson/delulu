@@ -30,7 +30,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"BossSignUp"];
+    UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"HelperView"];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
 
@@ -38,11 +38,12 @@
     self.householdId = @"rLooCSzCeV";
 
     // employer
-    self.userId = @"oAYqpKhVz2";
+//    self.userId = @"oAYqpKhVz2";
+//    self.isBoss = TRUE;
     
     // helper1
-//    self.userId = @"4PjlbnqpjL";
-    
+    self.userId = @"4PjlbnqpjL";
+  self.isBoss = FALSE;
     return YES;
 }
 
@@ -68,7 +69,10 @@
 {
     // TODO
 //    if ([[Branch getInstance] handleDeepLink:url]) {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
+    appDelegate.householdId = url.lastPathComponent;
+    
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"HelperSignUp"];

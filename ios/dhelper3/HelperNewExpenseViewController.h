@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HelperNewExpenseViewController : UIViewController
+@interface HelperNewExpenseViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+    IBOutlet UIActivityIndicatorView *actIndicatorViewMain;
+    IBOutlet UITextField* txtFldDescription;
+    IBOutlet UITextField* txtFldCost;
+    IBOutlet UIDatePicker* datePickerDate;
+    IBOutlet UIImageView* imgTaken;
+    UIImagePickerController* imgPicker;
+}
 
 @end

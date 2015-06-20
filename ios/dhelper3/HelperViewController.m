@@ -23,13 +23,23 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Ledger"];
     [query whereKey:@"household" equalTo:[PFObject objectWithoutDataWithClassName:@"Household" objectId:@"rLooCSzCeV"]];
     [query whereKey:@"type" equalTo:@"expense"];
+    [query orderByDescending:@"date"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // Do something with the found objects
-            for (PFObject *object in objects) {
-                [self.arrayRecent addObject:object];
+            float balance = 0;
+            for (PFObject *obj in objects) {
+                [self.arrayRecent addObject:obj];
+                if ([@"expense" compare:obj[@"type"]] == 0) {
+                    balance -= [(NSNumber*) obj[@"amount"] floatValue];
+                } else {
+                    balance += [(NSNumber*) obj[@"amount"] floatValue];
+                }
             }
+            
+            lblBalance.text = [NSString stringWithFormat:@"Balance: HKD %.2f", balance];
+            lblBalance.textColor = (balance >= 0) ? [UIColor blackColor] : [UIColor redColor];
             [tableViewRecent reloadData];
         } else {
             // Log details of the failure
@@ -49,12 +59,18 @@
     NSDate* date = (NSDate*)obj[@"date"];
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"dd-MM-yyyy HH:mm"];
+    [format setDateFormat:@"dd-MM-yyyy"];
 
     // Configure Cell
     UILabel *label = (UILabel *)[cell.contentView viewWithTag:20];
     [label setText:[NSString stringWithFormat:@"%@",  [format stringFromDate:date]]];
     
+    label = (UILabel *)[cell.contentView viewWithTag:40];
+    [label setText:(NSString*)obj[@"description"]];
+    
+    label = (UILabel *)[cell.contentView viewWithTag:30];
+    [label setText:[NSString stringWithFormat:@"HKD %.2f", [(NSNumber*)obj[@"amount"] floatValue]]];
+
     return cell;
 }
 

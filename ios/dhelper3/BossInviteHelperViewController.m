@@ -7,6 +7,7 @@
 //
 
 #import "BossInviteHelperViewController.h"
+#import "AppDelegate.h"
 
 @interface BossInviteHelperViewController ()
 
@@ -16,12 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    textViewDetails.text = [NSString stringWithFormat:@"Hi,Please install dhelp from AppStore (http://store.apple.com) or GooglePlay (http://play.google.com/). And then open this link  dhelper://bnc.lt/l/%@]", appDelegate.householdId];
 }
 
 -(IBAction) copyToClipboard:(id) sender {

@@ -10,9 +10,11 @@
 
 @interface HelperSignUpViewController : UIViewController {
     IBOutlet UIActivityIndicatorView *actIndicatorViewMain;
+    IBOutlet UITextField *txtFldName;
     IBOutlet UITextField *txtFldUsername;
     IBOutlet UITextField *txtFldPassword;
     IBOutlet UIButton *btnSignUp;
+    IBOutlet UILabel *lblWelcome;
 }
 
 -(IBAction) signUp:(id) sender;

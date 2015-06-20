@@ -56,13 +56,14 @@
             row[@"password"] = self->txtFldPassword.text;
             row[@"type"] = @"employer";
             row[@"parent"] = row2;
+            appDelegate.isBoss = TRUE;
             appDelegate.householdId = row2.objectId;
             [row saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 [actIndicatorViewMain stopAnimating];
                 NSLog(@"create household");
                 if (succeeded) {
                     appDelegate.userId = row.objectId;
-                    [self performSegueWithIdentifier:@"Login" sender:nil];
+                    [self performSegueWithIdentifier:@"BossSignUpComplete" sender:nil];
                 } else {
                     [self showError:error];
                 }
