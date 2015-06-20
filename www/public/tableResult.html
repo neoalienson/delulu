@@ -1,0 +1,77 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js' ></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+	<script src="//www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+	<script src="js/tableResult.js"></script>
+</head>
+
+<body>
+	<div class='padding: 4px;' >
+	<div class='h2' style='padding-left: 16px;' >Expense Report - Details</div>
+	<div class='h4' style='padding-left: 16px;' >Week of June 20, 2015</div>
+
+	<div style='padding-left: 16px; padding-right: 16px; padding-top: 8px; width: calc(70%);'>
+		<table id="wrapper" class="display" cellspacing="0" width="100%" >
+	        <thead>
+	            <tr>
+	                <th>Date</th>
+	                <th>Expense Item</th>
+	                <th>Cost</th>
+	                <th>Region Average</th>
+	            </tr>
+	        </thead>
+	 
+	        <tfoot>
+	            <tr>
+	                <th>Date</th>
+	                <th>Expense Item</th>
+	                <th>Cost</th>
+	                <th>Region Average</th>
+	            </tr>
+	        </tfoot>
+	 
+	        <tbody>
+	            <tr>
+	                <td>2015-06-20</td>
+	                <td>Eggs</td>
+	                <td>$12.5</td>
+	                <td>$13.0</td>
+	            </tr>
+	            <tr>
+	                <td>2015-06-20</td>
+	                <td>Milk</td>
+	                <td>$14.5</td>
+	                <td>$16.0</td>
+	            </tr>
+	            <tr>
+	                <td>2015-06-20</td>
+	                <td>Eggs</td>
+	                <td>$2.5</td>
+	                <td>$3.7</td>
+	            </tr>
+	            <tr>
+	                <td>2015-06-20</td>
+	                <td>Carrot</td>
+	                <td>$34.0</td>
+	                <td>$34.5</td>
+	            </tr>	            
+	        </tbody>
+	    </table>		
+	</div>
+
+	<div class='h4' style='padding-left: 16px; padding-top: 8px; display:none;' id='divDepositMoney' ></div>
+	<div class='h4' style='padding-left: 16px; padding-top: 2px;' >
+		* data is based on 2 adults, 3 children (3-5 years old and 12-14 years old)
+	</div>
+
+</body>
+</html>
