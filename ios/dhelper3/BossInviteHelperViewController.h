@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BossInviteHelperViewController : UIViewController
+@interface BossInviteHelperViewController : UIViewController {
+    IBOutlet UITextView *textViewDetails;
+}
+
+-(IBAction) copyToClipboard:(id) sender;
 
 @end
