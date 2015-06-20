@@ -46,11 +46,19 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if ([[Branch getInstance] handleDeepLink:url]) {
+    // TODO
+//    if ([[Branch getInstance] handleDeepLink:url]) {
+
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"HelperSignUp"];
+        self.window.rootViewController = vc;
+        [self.window makeKeyAndVisible];
+        
         return YES;
-    }
+//    }
     
-    return NO;
+//    return NO;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

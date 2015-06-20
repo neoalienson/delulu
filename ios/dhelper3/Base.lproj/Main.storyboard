@@ -238,7 +238,7 @@
         <!--Helper Sign Up View Controller-->
         <scene sceneID="Ch1-1Y-17w">
             <objects>
-                <viewController id="8KK-Mi-2He" customClass="HelperSignUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelperSignUp" id="8KK-Mi-2He" customClass="HelperSignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ttp-OI-hGF"/>
                         <viewControllerLayoutGuide type="bottom" id="xg1-QR-poa"/>
