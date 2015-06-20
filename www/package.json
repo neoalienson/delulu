@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base public",
     "build": "webpack",
+    "deploy": "parse deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Leonard Siu",
