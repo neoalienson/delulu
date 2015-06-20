@@ -12,16 +12,19 @@ var SignUp = React.createClass({
     },
     render: function () {
         return (
-            <div className="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+            <div
+                className="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <div className="form-group">
                     <label htmlFor="householdName">Household name</label>
+                    <div></div>
                     <input type="text" className="form-control" id="householdName" placeholder="Household Name" required
-                           value={this.state.householdName} onChange={this.handleChange}/>
+                           value={this.state.householdName} onChange={this.handleChange}
+                           onBlur={this.handleHouseholdBlur}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email address</label>
                     <input type="email" className="form-control" id="email" placeholder="Your Email" required
-                        value={this.state.email} onChange={this.handleChange}/>
+                           value={this.state.email} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
@@ -30,23 +33,11 @@ var SignUp = React.createClass({
                            value={this.state.password} onChange={this.handleChange}/>
                 </div>
 
-                <hr/>
-                <p>
-                    Invite your domestic helper!<br/>
-                    <em>(You can do this later)</em>
-                </p>
-
-                <div className="form-group">
-                    <label htmlFor="dhEmail">Domestic Helper's Email</label>
-                    <input type="text" className="form-control" id="dhEmail" placeholder="Domestic Helper's Email" required
-                           value={this.state.dhEmail} onChange={this.handleChange}/>
-                </div>
-
                 <button type="button" className="btn btn-default" onClick={this.handleSignUp}>Sign Up</button>
             </div>
         )
     },
-    handleChange: function(ev) {
+    handleChange: function (ev) {
         var tmp = {};
         tmp[ev.target.id] = ev.target.value;
         this.setState(tmp);
@@ -85,6 +76,26 @@ var SignUp = React.createClass({
             helper.set("parent", household);
             helper.save();
         }
+    },
+    handleHouseholdBlur: function (ev) {
+        console.debug("onblur");
+        var Household = Parse.Object.extend("Household");
+        var query = new Parse.Query(Household);
+        query.equalTo("name", ev.target.value);
+        query.find({
+            success: function (results) {
+                alert("Successfully retrieved " + results.length + " households.");
+                // Do something with the returned Parse.Object values
+                for (var i = 0; i < results.length; i++) {
+                    var object = results[i];
+                    alert(object.id + ' - ' + object.get('name'));
+                }
+            },
+            error: function (error) {
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+
     }
 });
 
