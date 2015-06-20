@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Branch.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     Branch *branch = [Branch getInstance];
+    
+    [Parse setApplicationId:@"Lq8BpgkIo7aoDpDOHjeqrKip6uH84elKKgLISFJW"
+                  clientKey:@"fRXwOGIBcPiK38hkw9zAYKhP29wJ4H10gSxAORRj"];
+
     [branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
         // params are the deep linked params associated with the link that the user clicked before showing up.
         NSLog(@"deep link data: %@", [params description]);

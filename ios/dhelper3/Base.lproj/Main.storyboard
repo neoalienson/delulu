@@ -13,47 +13,47 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="LogInBG-01" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-TN-EDN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="Logo-01-01" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-UH-xIr">
+                                <rect key="frame" x="108" y="115" width="224" height="236"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPK-zp-aHM">
-                                <rect key="frame" x="83" y="201" width="84" height="21"/>
+                                <rect key="frame" x="75" y="370" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-sp-sPj">
-                                <rect key="frame" x="107" y="285" width="55" height="30"/>
+                                <rect key="frame" x="99" y="454" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="az0-fI-9u1" kind="show" id="FEZ-RN-jku"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-rY-6Be">
-                                <rect key="frame" x="180" y="198" width="151" height="30"/>
+                                <rect key="frame" x="172" y="367" width="151" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-ye-wwt">
-                                <rect key="frame" x="249" y="285" width="38" height="30"/>
+                                <rect key="frame" x="241" y="454" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <segue destination="o5V-ca-ORw" kind="showDetail" id="ryT-NP-1RL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DHelper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3A-t4-kRj">
-                                <rect key="frame" x="160" y="105" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J31-5a-0vb">
-                                <rect key="frame" x="180" y="247" width="151" height="30"/>
+                                <rect key="frame" x="172" y="416" width="151" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-jA-d4h">
-                                <rect key="frame" x="83" y="250" width="89" height="21"/>
+                                <rect key="frame" x="75" y="419" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                         <viewControllerLayoutGuide type="bottom" id="w1P-Wn-eKD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Iqm-VP-g0y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ToB-s6-aNK">
@@ -219,7 +219,7 @@
         <!--Navigation Controller-->
         <scene sceneID="OeT-VA-ViV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GOB-Nc-jTZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GOB-Nc-jTZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gU0-DE-Ncf">
@@ -227,6 +227,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="thl-su-Z3L">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="zQH-sp-Njh"/>
                     </connections>
@@ -256,7 +259,7 @@
                                 <rect key="frame" x="208" y="269" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="o5V-ca-ORw" kind="showDetail" id="tmD-nL-EDw"/>
+                                    <segue destination="duu-72-kPI" kind="showDetail" id="lbZ-lh-dQX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1l-4s-SAH">
@@ -295,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTn-p3-hN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847" y="493"/>
+            <point key="canvasLocation" x="847" y="1326"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="75k-vP-53x">
@@ -479,7 +482,8 @@
             <point key="canvasLocation" x="1335" y="1326"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="tmD-nL-EDw"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="LogInBG-01" width="195" height="346"/>
+        <image name="Logo-01-01" width="110" height="117"/>
+    </resources>
 </document>

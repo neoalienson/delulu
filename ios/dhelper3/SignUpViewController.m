@@ -25,17 +25,22 @@
 }
 
 -(IBAction) createAccount:(id) sender {
+    /*
+    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
+    gameScore[@"score"] = @1337;
+    gameScore[@"playerName"] = @"Sean Plott";
+    gameScore[@"cheatMode"] = @NO;
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+     
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    */
     [self.navigationController popViewControllerAnimated:true];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
