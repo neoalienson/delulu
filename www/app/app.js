@@ -15,18 +15,15 @@ var Main = React.createClass({
     }
 });
 
-var SignUp = require('./signup');
-var DhSignUp = require('./dh-signup');
-var Employer = require('./employer');
 var Home = require('./home');
 
 var routes = (
     <Route handler={Main}>
         <DefaultRoute handler={Home}/>
         <Route name="home" path="" handler={Home}/>
-        <Route name="signup" path="/signup" handler={SignUp}/>
-        <Route name="dh-signup" path="/dh-signup" handler={DhSignUp}/>
-        <Route name="employer" path="/employer" handler={Employer}/>
+        <Route name="signup" path="/signup" handler={require('./signup')}/>
+        <Route name="employer" path="/employer" handler={require('./employer')}/>
+        <Route name="about" path="/about" handler={require('./about')}/>
     </Route>
 );
 

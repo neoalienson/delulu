@@ -14,24 +14,18 @@ var Home = React.createClass({
                 </div>
 
                 <div className="row text-center spaced">
-                    <div className="col-xs-4">
-                        Employer of Domestic help?
+                    <div className="col-xs-6">
+                        New User?
                     </div>
-                    <div className="col-xs-4">
-                        Domestic helper?
-                    </div>
-                    <div className="col-xs-4">
+                    <div className="col-xs-6">
                         Already a user?
                     </div>
                 </div>
                 <div className="row text-center spaced">
-                    <div className="col-xs-4">
+                    <div className="col-xs-6">
                         <a className="btn btn-default" href="/#/signup">Sign up</a>
                     </div>
-                    <div className="col-xs-4">
-                        <a className="btn btn-default" href="/#/dh-signup">Sign up</a>
-                    </div>
-                    <div className="col-xs-4">
+                    <div className="col-xs-6">
                         <a className="btn btn-primary" href="/#/signin">Sign in</a>
                     </div>
                 </div>
