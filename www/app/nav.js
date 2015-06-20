@@ -13,7 +13,7 @@ var Nav = React.createClass({
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">Deulu</a>
+                        <a className="navbar-brand logo" href="#"></a>
                     </div>
                     <div className="collapse navbar-collapse" id="navbar-collapse-1">
                         <ul className="nav navbar-nav">
