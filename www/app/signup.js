@@ -12,8 +12,7 @@ var SignUp = React.createClass({
     },
     render: function () {
         return (
-            <div
-                className="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+            <div className="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <div className="form-group">
                     <label for="householdName">Household name</label>
                     <input type="text" className="form-control" id="householdName" placeholder="Household Name" required
