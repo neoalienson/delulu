@@ -19,9 +19,6 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="LogInBG-01" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-TN-EDN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="Logo-01-01" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-UH-xIr">
-                                <rect key="frame" x="108" y="115" width="224" height="236"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPK-zp-aHM">
                                 <rect key="frame" x="75" y="370" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -29,24 +26,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-sp-sPj">
-                                <rect key="frame" x="99" y="454" width="55" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <rect key="frame" x="75" y="502" width="116" height="30"/>
+                                <state key="normal" title="Sign Up As Boss"/>
                                 <connections>
-                                    <segue destination="az0-fI-9u1" kind="show" id="FEZ-RN-jku"/>
+                                    <segue destination="az0-fI-9u1" kind="show" identifier="SignUpAsBoss" id="FEZ-RN-jku"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-rY-6Be">
-                                <rect key="frame" x="172" y="367" width="151" height="30"/>
+                                <rect key="frame" x="172" y="370" width="151" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-ye-wwt">
-                                <rect key="frame" x="241" y="454" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="o5V-ca-ORw" kind="showDetail" id="ryT-NP-1RL"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J31-5a-0vb">
                                 <rect key="frame" x="172" y="416" width="151" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -58,19 +48,43 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="Logo-01-01" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-UH-xIr">
+                                <rect key="frame" x="108" y="115" width="224" height="236"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jVE-pO-0v0">
+                                <rect key="frame" x="189" y="349" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zs-xe-QEk">
+                                <rect key="frame" x="241" y="502" width="120" height="30"/>
+                                <state key="normal" title="Sign up as helper"/>
+                                <connections>
+                                    <segue destination="8KK-Mi-2He" kind="show" id="FgU-N2-CCw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-ye-wwt">
+                                <rect key="frame" x="182" y="462" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Opt-aA-wJS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="RnL-Qe-rtu"/>
+                    <connections>
+                        <outlet property="actIndicatorViewMain" destination="jVE-pO-0v0" id="hom-1E-9sW"/>
+                        <segue destination="o5V-ca-ORw" kind="showDetail" identifier="Login" id="q5d-4g-6YQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="847" y="-388"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Boss Sign Up View Controller-->
         <scene sceneID="2jb-eP-Ksb">
             <objects>
-                <viewController id="az0-fI-9u1" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController id="az0-fI-9u1" customClass="BossSignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5DF-m6-K7X"/>
                         <viewControllerLayoutGuide type="bottom" id="w1P-Wn-eKD"/>
@@ -88,7 +102,7 @@
                                 <rect key="frame" x="180" y="316" width="46" height="30"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
-                                    <action selector="createAccount:" destination="az0-fI-9u1" eventType="touchUpInside" id="OCh-sI-Ooe"/>
+                                    <action selector="signUp:" destination="az0-fI-9u1" eventType="touchUpInside" id="vpY-1d-L0f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nob-MH-WwA">
@@ -114,9 +128,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fKO-RQ-kaF">
+                                <rect key="frame" x="188" y="350" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wWd-kO-BlI">
+                                <rect key="frame" x="189" y="349" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="actIndicatorViewMain" destination="wWd-kO-BlI" id="2pI-Bz-opj"/>
+                        <outlet property="btnSignUp" destination="9sf-bH-Jrs" id="zNx-OP-h1J"/>
+                        <outlet property="txtFldPassword" destination="ToB-s6-aNK" id="Z8t-5z-JUc"/>
+                        <outlet property="txtFldUsername" destination="OT4-Pv-D98" id="ACt-Vi-FIY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XP9-HK-19C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController {
+    IBOutlet UIActivityIndicatorView *actIndicatorViewMain;
+}
+
+-(IBAction) login:(id) sender;
 
 @end
