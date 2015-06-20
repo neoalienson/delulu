@@ -18,7 +18,6 @@ var Nav = React.createClass({
         SessionStore.removeListener(SessionStore.EventTypes.USER_SIGNED_OUT, this.handleSessionChanged);
     },
     render: function () {
-        console.debug("session.user: %o", SessionStore.getUser());
         var signInOut = (
             <ul className="nav navbar-nav">
                 <li><a href="#/signup">Sign up</a></li>

@@ -36,15 +36,23 @@ var SignIn = React.createClass({
         router: React.PropTypes.func
     },
     getInitialState: function () {
+        this.handleSessionChanged();
         return {
             email: {value: "", status: ""},
             password: {value: "", status: ""},
             type: {value:"employer", status:""}
         }
     },
+    componentWillMount: function () {
+        SessionStore.on(SessionStore.EventTypes.USER_SIGNED_IN, this.handleSessionChanged);
+        SessionStore.on(SessionStore.EventTypes.USER_SIGNED_OUT, this.handleSessionChanged);
+
+    },
+    componentWillUnmount: function () {
+        SessionStore.removeListener(SessionStore.EventTypes.USER_SIGNED_IN, this.handleSessionChanged);
+        SessionStore.removeListener(SessionStore.EventTypes.USER_SIGNED_OUT, this.handleSessionChanged);
+    },
     render: function () {
-        var user = SessionStore.getUser();
-        if (user) this.context.router.transitionTo('/household/' + user.household);
         return (
             <div
                 className="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
@@ -71,6 +79,13 @@ var SignIn = React.createClass({
     },
     handleSignIn: function () {
         SessionStore.signIn(this.state.email.value, this.state.password.value);
+    },
+    handleSessionChanged: function() {
+        var user = SessionStore.getUser();
+        if (user) {
+            var that = this;
+            this.context.router.transitionTo('/household/' + user.attributes.parent.id);
+        }
     }
 });
 
