@@ -12,6 +12,9 @@
   "license": "",
   "dependencies": {
     "bootstrap": "^3.3.4",
+    "fixed-data-table": "^0.3.0",
+    "keymirror": "^0.1.1",
+    "object-assign": "^3.0.0",
     "react": "^0.13.3"
   },
   "devDependencies": {
