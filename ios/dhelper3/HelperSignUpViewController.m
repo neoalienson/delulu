@@ -15,6 +15,14 @@
 
 @implementation HelperSignUpViewController
 
+-(void)viewDidLoad {
+    txtFldUsername.placeholder = @"  Username";
+    txtFldPassword.placeholder = @"  Password";
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden  = false;
+}
 
 -(IBAction) signUp:(id) sender {
     

@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BossViewController : UIViewController
+@interface BossViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+    
+    IBOutlet UITableView *tableViewRecent;
+    
+}
+
+@property (strong, nonatomic) NSDictionary *helperList;
+
 
 @end

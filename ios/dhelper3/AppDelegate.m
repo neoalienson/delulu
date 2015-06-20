@@ -28,6 +28,21 @@
         NSLog(@"deep link data: %@", [params description]);
     }];
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"BossSignUp"];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+
+    
+    self.householdId = @"rLooCSzCeV";
+
+    // employer
+    self.userId = @"oAYqpKhVz2";
+    
+    // helper1
+//    self.userId = @"4PjlbnqpjL";
+    
     return YES;
 }
 

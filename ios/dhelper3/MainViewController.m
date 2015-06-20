@@ -16,6 +16,37 @@
 @implementation MainViewController
 
 -(void)viewDidLoad {
+    /*
+    PFQuery *q1 = [PFQuery queryWithClassName:@"Household"];
+    [q1 getObjectInBackgroundWithId:@"rLooCSzCeV" block:^(PFObject *gameScore, NSError *error) {
+        // Do something with the returned PFObject in the gameScore variable.
+        NSLog(@"%@", gameScore);
+    }];
+     */
+
+    /*
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query getObjectInBackgroundWithId:@"2QOgczQtHp" block:^(PFObject *gameScore, NSError *error) {
+    }];
+     */
+    PFQuery *query = [PFQuery queryWithClassName:@"Users"];
+    [query whereKey:@"parent" equalTo:[PFObject objectWithoutDataWithClassName:@"Household" objectId:@"rLooCSzCeV"]];
+    [query whereKey:@"type" equalTo:@"helper"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     [txtFldUsername addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [txtFldPassword addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
@@ -31,6 +62,8 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden  = true;
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1];
     imgWelcome.alpha = 1;

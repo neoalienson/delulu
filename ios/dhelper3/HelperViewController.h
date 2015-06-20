@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HelperViewController : UIViewController
+@interface HelperViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    IBOutlet UITableView* tableViewRecent;
+}
+@property (strong, nonatomic) NSMutableArray *arrayRecent;
 
 @end

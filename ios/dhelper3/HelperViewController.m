@@ -7,6 +7,7 @@
 //
 
 #import "HelperViewController.h"
+#import <Parse/Parse.h>
 
 @interface HelperViewController ()
 
@@ -16,22 +17,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.arrayRecent = [NSMutableArray new];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Ledger"];
+    [query whereKey:@"household" equalTo:[PFObject objectWithoutDataWithClassName:@"Household" objectId:@"rLooCSzCeV"]];
+    [query whereKey:@"type" equalTo:@"expense"];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                [self.arrayRecent addObject:object];
+            }
+            [tableViewRecent reloadData];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayRecent.count;
 }
 
-/*
-#pragma mark - Navigation
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HelperViewRecentRow"];
+    
+    PFObject* obj = (PFObject*)[self.arrayRecent objectAtIndex:indexPath.row];
+    NSDate* date = (NSDate*)obj[@"date"];
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd-MM-yyyy HH:mm"];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Configure Cell
+    UILabel *label = (UILabel *)[cell.contentView viewWithTag:20];
+    [label setText:[NSString stringWithFormat:@"%@",  [format stringFromDate:date]]];
+    
+    return cell;
 }
-*/
 
 @end
