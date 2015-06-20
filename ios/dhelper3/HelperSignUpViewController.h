@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HelperSignUpViewController : UIViewController
+@interface HelperSignUpViewController : UIViewController {
+    IBOutlet UIActivityIndicatorView *actIndicatorViewMain;
+    IBOutlet UITextField *txtFldUsername;
+    IBOutlet UITextField *txtFldPassword;
+    IBOutlet UIButton *btnSignUp;
+}
+
+-(IBAction) signUp:(id) sender;
 
 @end

@@ -14,18 +14,18 @@ var SignUp = React.createClass({
         return (      
             <div className="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <div className="form-group">
-                    <label for="householdName">Household name</label>
+                    <label htmlFor="householdName">Household name</label>
                     <input type="text" className="form-control" id="householdName" placeholder="Household Name" required
                            value={this.state.householdName} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                    <label for="email">Email address</label>
+                    <label htmlFor="email">Email address</label>
                     <input type="email" className="form-control" id="email" placeholder="Your Email" required
                         value={this.state.email} onChange={this.handleChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" className="form-control" id="password" placeholder="Your Password" required
                            value={this.state.password} onChange={this.handleChange}/>
                 </div>
@@ -37,7 +37,7 @@ var SignUp = React.createClass({
                 </p>
 
                 <div className="form-group">
-                    <label for="dhEmail">Domestic Helper's Email</label>
+                    <label htmlFor="dhEmail">Domestic Helper's Email</label>
                     <input type="text" className="form-control" id="dhEmail" placeholder="Domestic Helper's Email" required
                            value={this.state.dhEmail} onChange={this.handleChange}/>
                 </div>

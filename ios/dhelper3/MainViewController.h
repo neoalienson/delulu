@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController {
+@interface MainViewController : UIViewController <UITextFieldDelegate> {
     IBOutlet UIActivityIndicatorView *actIndicatorViewMain;
+    IBOutlet UIButton *btnLogin;
+    IBOutlet UIView *viewLogin;
+    IBOutlet UITextField *txtFldUsername;
+    IBOutlet UITextField *txtFldPassword;
+        
+    IBOutlet UIImageView *imgWelcome;
+    IBOutlet UIImageView *imgOut1;
+    IBOutlet UIImageView *imgOut2;
+    IBOutlet UIImageView *imgPaper;
 }
 
 -(IBAction) login:(id) sender;
+-(void)textFieldDidChange:(UITextField *)textField;
 
 @end

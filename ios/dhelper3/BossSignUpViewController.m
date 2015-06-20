@@ -19,8 +19,10 @@
 
     [actIndicatorViewMain startAnimating];
 
-    PFObject *row = [PFObject objectWithClassName:@"Household"];
-    row[@"name"] = self->txtFldUsername;
+    PFObject *row = [PFObject objectWithClassName:@"User"];
+    row[@"username"] = self->txtFldUsername;
+    row[@"password"] = self->txtFldPassword;
+    row[@"type"] = @"employer";
     
     [row saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [actIndicatorViewMain stopAnimating];
@@ -36,8 +38,6 @@
         }
         NSLog(@"login result: %i", succeeded);
     }];
-
-//    [self.navigationController popViewControllerAnimated:true];
 }
 
 @end

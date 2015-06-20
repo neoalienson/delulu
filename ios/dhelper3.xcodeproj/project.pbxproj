@@ -17,9 +17,9 @@
 		B503E8BF1B357DAC0062B767 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8BE1B357DAC0062B767 /* libsqlite3.dylib */; };
 		B503E8C31B357DE20062B767 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8C21B357DE20062B767 /* AudioToolbox.framework */; };
 		B503E8C51B357E050062B767 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8C41B357E050062B767 /* MobileCoreServices.framework */; };
+		B503E8C71B35B2250062B767 /* UICustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B503E8C61B35B2250062B767 /* UICustomTextField.m */; };
 		B55C360D1B35431C00A82A84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C360C1B35431C00A82A84 /* main.m */; };
 		B55C36101B35431C00A82A84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C360F1B35431C00A82A84 /* AppDelegate.m */; };
-		B55C36131B35431C00A82A84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36121B35431C00A82A84 /* ViewController.m */; };
 		B55C36161B35431C00A82A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C36141B35431C00A82A84 /* Main.storyboard */; };
 		B55C36181B35431C00A82A84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55C36171B35431C00A82A84 /* Images.xcassets */; };
 		B55C361B1B35431C00A82A84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55C36191B35431C00A82A84 /* LaunchScreen.xib */; };
@@ -88,13 +88,12 @@
 		B503E8C01B357DB40062B767 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		B503E8C21B357DE20062B767 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B503E8C41B357E050062B767 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B503E8C61B35B2250062B767 /* UICustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomTextField.m; sourceTree = "<group>"; };
 		B55C36071B35431C00A82A84 /* dhelper3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dhelper3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55C360B1B35431C00A82A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55C360C1B35431C00A82A84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B55C360E1B35431C00A82A84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B55C360F1B35431C00A82A84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B55C36111B35431C00A82A84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B55C36121B35431C00A82A84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B55C36151B35431C00A82A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B55C36171B35431C00A82A84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B55C361A1B35431C00A82A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -251,9 +250,8 @@
 			children = (
 				B55C360E1B35431C00A82A84 /* AppDelegate.h */,
 				B55C360F1B35431C00A82A84 /* AppDelegate.m */,
-				B55C36111B35431C00A82A84 /* ViewController.h */,
-				B55C36121B35431C00A82A84 /* ViewController.m */,
 				B55C36141B35431C00A82A84 /* Main.storyboard */,
+				B503E8C61B35B2250062B767 /* UICustomTextField.m */,
 				B503E8AE1B3559DA0062B767 /* HelperSignUpViewController.h */,
 				B503E8AF1B3559DA0062B767 /* HelperSignUpViewController.m */,
 				B55C36A61B3549EA00A82A84 /* HelperNewExpenseViewController.h */,
@@ -495,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55C36A21B3548D400A82A84 /* BossInviteHelperViewController.m in Sources */,
+				B503E8C71B35B2250062B767 /* UICustomTextField.m in Sources */,
 				B55C368B1B35433600A82A84 /* BranchLoadRewardsRequest.m in Sources */,
 				B55C36791B35433600A82A84 /* BNCLinkData.m in Sources */,
 				B55C36761B35433600A82A84 /* BNCEncodingUtils.m in Sources */,
@@ -522,7 +521,6 @@
 				B55C369F1B3547E600A82A84 /* BossViewController.m in Sources */,
 				B55C369C1B3545C200A82A84 /* BossSignUpViewController.m in Sources */,
 				B55C367E1B35433600A82A84 /* BNCServerResponse.m in Sources */,
-				B55C36131B35431C00A82A84 /* ViewController.m in Sources */,
 				B55C368E1B35433600A82A84 /* BranchOpenRequest.m in Sources */,
 				B55C36101B35431C00A82A84 /* AppDelegate.m in Sources */,
 				B55C36831B35433600A82A84 /* BranchCloseRequest.m in Sources */,
