@@ -3,14 +3,20 @@
  */
 
 var React = require('react');
+var SessionStore = require('./stores/session');
 
 var SignOut = React.createClass({
     contextTypes: {
         router: React.PropTypes.func
     },
-    render: function() {
+    getInitialState: function() {
         SessionStore.signOut();
         this.context.router.transitionTo("/");
-        return null;
+        return {};
+    },
+    render: function() {
+        return <div/>;
     }
 });
+
+module.exports = SignOut;
