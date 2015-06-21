@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -15,37 +16,16 @@
 
 @implementation MainViewController
 
--(void)viewDidLoad {
-    /*
-    PFQuery *q1 = [PFQuery queryWithClassName:@"Household"];
-    [q1 getObjectInBackgroundWithId:@"rLooCSzCeV" block:^(PFObject *gameScore, NSError *error) {
-        // Do something with the returned PFObject in the gameScore variable.
-        NSLog(@"%@", gameScore);
-    }];
-     */
+-(void)showError:(NSString*) error {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                message:error
+                                               delegate:nil
+                                      cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query getObjectInBackgroundWithId:@"2QOgczQtHp" block:^(PFObject *gameScore, NSError *error) {
-    }];
-     */
-    PFQuery *query = [PFQuery queryWithClassName:@"Users"];
-    [query whereKey:@"parent" equalTo:[PFObject objectWithoutDataWithClassName:@"Household" objectId:@"rLooCSzCeV"]];
-    [query whereKey:@"type" equalTo:@"helper"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+-(void)viewDidLoad {
     
     [txtFldUsername addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [txtFldPassword addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
@@ -88,8 +68,30 @@
 -(IBAction) login:(id) sender {
     [actIndicatorViewMain startAnimating];
 
-    // validation
-    [self performSegueWithIdentifier:@"Login" sender:nil];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Users"];
+    [query whereKey:@"username" equalTo:txtFldUsername.text];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            if (objects.count == 0) {
+                [self showError:@"User not found"];
+            } else {
+                PFObject* obj = (PFObject*)[objects objectAtIndex:0];
+                appDelegate.userId = obj.objectId;
+                appDelegate.householdId = ((PFObject*)obj[@"parent"]).objectId;
+                appDelegate.isBoss = [@"employer" compare:obj[@"type"]] == 0;
+                NSLog(@"%@, %d", obj, appDelegate.isBoss);
+                [self performSegueWithIdentifier:(appDelegate.isBoss) ? @"LoginAsBoss" : @"LoginAsHelper" sender:nil];
+            }
+            [actIndicatorViewMain stopAnimating];
+        } else {
+            [actIndicatorViewMain stopAnimating];
+            [self showError:[error description]];
+        }
+    }];
+
     
 }
 

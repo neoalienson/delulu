@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "HelperViewController.h"
 
 @interface HelperNewExpenseViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UIActivityIndicatorView *actIndicatorViewMain;
@@ -16,5 +17,7 @@
     IBOutlet UIImageView* imgTaken;
     UIImagePickerController* imgPicker;
 }
+
+@property (weak, nonatomic) HelperViewController* parent;
 
 @end

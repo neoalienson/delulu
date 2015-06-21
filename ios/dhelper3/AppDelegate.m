@@ -28,22 +28,23 @@
         NSLog(@"deep link data: %@", [params description]);
     }];
     
+    /*
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"HelperView"];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
-
+*/
     
-    self.householdId = @"rLooCSzCeV";
+//    self.householdId = @"rLooCSzCeV";
 
     // employer
 //    self.userId = @"oAYqpKhVz2";
 //    self.isBoss = TRUE;
     
     // helper1
-    self.userId = @"4PjlbnqpjL";
-  self.isBoss = FALSE;
+//    self.userId = @"4PjlbnqpjL";
+//  self.isBoss = FALSE;
     return YES;
 }
 

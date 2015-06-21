@@ -10,6 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "HelperViewController.h"
 
 @interface HelperNewExpenseViewController ()
 
@@ -61,7 +62,8 @@
     [row2 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [actIndicatorViewMain stopAnimating];
         if (succeeded) {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popToRootViewControllerAnimated:TRUE];
+            [self.parent loadData];
         } else {
             [self showError:error];
         }

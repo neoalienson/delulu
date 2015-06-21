@@ -12,6 +12,9 @@
     IBOutlet UITableView* tableViewRecent;
     IBOutlet UILabel* lblBalance;
 }
+
+- (void)loadData;
+
 @property (strong, nonatomic) NSMutableArray *arrayRecent;
 
 @end

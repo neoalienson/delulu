@@ -1,44 +1,47 @@
 //
-//  HelperViewController.m
+//  BossHelperViewController.m
 //  dhelper3
 //
-//  Created by Neo on 6/20/15.
+//  Created by Neo on 6/21/15.
 //  Copyright (c) 2015 dhelper3. All rights reserved.
 //
 
-#import "HelperViewController.h"
+#import "BossHelperViewController.h"
 #import <Parse/Parse.h>
-#import "HelperNewExpenseViewController.h"
 
-@interface HelperViewController ()
+@interface BossHelperViewController ()
 
 @end
 
-@implementation HelperViewController
+@implementation BossHelperViewController
+
+-(void)updateBalance {
+    lblBalance.text = [NSString stringWithFormat:@"Balance: HKD %.2f", self.balance];
+    lblBalance.textColor = (self.balance > 0) ? [UIColor blackColor] : [UIColor redColor];
+}
 
 - (void)loadData {
     NSLog(@"loading data");
     self.arrayRecent = [NSMutableArray new];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Ledger"];
-    [query whereKey:@"household" equalTo:[PFObject objectWithoutDataWithClassName:@"Household" objectId:@"rLooCSzCeV"]];
+    [query whereKey:@"createdBy" equalTo:[PFObject objectWithoutDataWithClassName:@"Users" objectId:self.helperId]];
     [query orderByDescending:@"date"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // Do something with the found objects
-            float balance = 0;
+            NSLog(@"loaded %lu:", (unsigned long)objects.count);
+            self.balance = 0;
             for (PFObject *obj in objects) {
                 [self.arrayRecent addObject:obj];
                 if ([@"expense" compare:obj[@"type"]] == 0) {
-                    balance -= [(NSNumber*) obj[@"amount"] floatValue];
+                    self.balance -= [(NSNumber*) obj[@"amount"] floatValue];
                 } else {
-                    balance += [(NSNumber*) obj[@"amount"] floatValue];
+                    self.balance += [(NSNumber*) obj[@"amount"] floatValue];
                 }
             }
             
-            lblBalance.text = [NSString stringWithFormat:@"Balance: HKD %.2f", balance];
-            lblBalance.textColor = (balance >= 0) ? [UIColor blackColor] : [UIColor redColor];
+            [self updateBalance];
             [tableViewRecent reloadData];
         } else {
             // Log details of the failure
@@ -48,8 +51,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    HelperNewExpenseViewController *viewController = (HelperNewExpenseViewController *)[segue destinationViewController];
-    viewController.parent = self;
+//    HelperNewExpenseViewController *viewController = (HelperNewExpenseViewController *)[segue destinationViewController];
+//    viewController.parent = self;
 }
 
 - (void)viewDidLoad {
@@ -63,14 +66,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HelperViewRecentRow"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HelperDetailsRecentRow"];
     
     PFObject* obj = (PFObject*)[self.arrayRecent objectAtIndex:indexPath.row];
     NSDate* date = (NSDate*)obj[@"date"];
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd-MM-yyyy"];
-
+    
     // Configure Cell
     UILabel *label = (UILabel *)[cell.contentView viewWithTag:20];
     [label setText:[NSString stringWithFormat:@"%@",  [format stringFromDate:date]]];
@@ -80,8 +83,12 @@
     
     label = (UILabel *)[cell.contentView viewWithTag:30];
     [label setText:[NSString stringWithFormat:@"HKD %.2f", [(NSNumber*)obj[@"amount"] floatValue]]];
-
+    
     return cell;
+}
+
+-(IBAction)deposit:(id)sender {
+    [self updateBalance];
 }
 
 @end

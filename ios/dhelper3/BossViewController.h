@@ -14,7 +14,7 @@
     
 }
 
-@property (strong, nonatomic) NSDictionary *helperList;
+@property (strong, nonatomic) NSMutableArray *arrayHelper;
 
 
 @end
