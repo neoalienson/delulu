@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self->viewHelpers.alpha = 0;
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.arrayHelper = [NSMutableArray new];
@@ -38,6 +40,13 @@
             }
             
             [self->tableViewRecent reloadData];
+            
+            if (objects.count > 0) {
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationDuration:0.5];
+                viewHelpers.alpha = 1;
+                [UIView commitAnimations];
+            }
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -63,10 +72,14 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    BossHelperViewController *vc = (BossHelperViewController *)[segue destinationViewController];
-    NSIndexPath* idx = [tableViewRecent indexPathForSelectedRow];
-    vc.helperId = ((PFObject*)[self.arrayHelper objectAtIndex:idx.row]).objectId;
-    NSLog(@"%@", vc.helperId);
+    if ([segue.identifier isEqualToString:@"BossHelperView"]) {
+        BossHelperViewController *vc = (BossHelperViewController *)[segue destinationViewController];
+        NSIndexPath* idx = [tableViewRecent indexPathForSelectedRow];
+        PFObject* obj = (PFObject*)[self.arrayHelper objectAtIndex:idx.row];
+        vc.helperId = obj.objectId;
+        vc.name = obj[@"name"];
+        NSLog(@"%@", vc.helperId);
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

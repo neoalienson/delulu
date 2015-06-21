@@ -8,6 +8,7 @@
 
 #import "BossHelperViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface BossHelperViewController ()
 
@@ -22,6 +23,7 @@
 
 - (void)loadData {
     NSLog(@"loading data");
+    
     self.arrayRecent = [NSMutableArray new];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Ledger"];
@@ -58,6 +60,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    lblOverview.text = self.name;
+    txtFldAmount.placeholder = @"Amount to deposit in HKD";
+    
     [self loadData];
 }
 
@@ -75,6 +80,11 @@
     [format setDateFormat:@"dd-MM-yyyy"];
     
     // Configure Cell
+    float amount = [(NSNumber*)obj[@"amount"] floatValue];
+    UIImageView *img = (UIImageView*)[cell.contentView viewWithTag:10];
+    img.image = [UIImage imageNamed:([@"deposit" compare:obj[@"type"]] == 0) ?
+                     @"transaction" : @"shopping"];
+    
     UILabel *label = (UILabel *)[cell.contentView viewWithTag:20];
     [label setText:[NSString stringWithFormat:@"%@",  [format stringFromDate:date]]];
     
@@ -82,13 +92,48 @@
     [label setText:(NSString*)obj[@"description"]];
     
     label = (UILabel *)[cell.contentView viewWithTag:30];
-    [label setText:[NSString stringWithFormat:@"HKD %.2f", [(NSNumber*)obj[@"amount"] floatValue]]];
+    [label setText:[NSString stringWithFormat:@"HKD %.2f", amount]];
     
     return cell;
 }
 
+-(void)clearKeyboard {
+    [txtFldAmount resignFirstResponder];
+}
+
+-(void)showError:(NSError*)error {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message:@"Fail to deposit"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
 -(IBAction)deposit:(id)sender {
-    [self updateBalance];
+    [self clearKeyboard];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    PFObject *row = [PFObject objectWithClassName:@"Ledger"];
+    row[@"amount"] = [NSNumber numberWithFloat:[self->txtFldAmount.text floatValue]];;
+    row[@"type"] = @"deposit";
+    row[@"date"] = [NSDate date];
+    row[@"household"] = [PFObject objectWithoutDataWithClassName:@"Household" objectId:appDelegate.householdId];
+    row[@"createdBy"] = [PFObject objectWithoutDataWithClassName:@"Users" objectId:self.helperId];
+    row[@"description"] = @"Deposit";
+    [row saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [actIndicatorViewMain stopAnimating];
+        NSLog(@"create household");
+        if (succeeded) {
+            txtFldAmount.text = @"";
+            [self updateBalance];
+            [self loadData];
+        } else {
+            [self showError:error];
+        }
+    }];
+    
 }
 
 @end

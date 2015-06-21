@@ -12,6 +12,7 @@
     
     IBOutlet UITableView *tableViewRecent;
     
+    IBOutlet UIView *viewHelpers;    
 }
 
 @property (strong, nonatomic) NSMutableArray *arrayHelper;

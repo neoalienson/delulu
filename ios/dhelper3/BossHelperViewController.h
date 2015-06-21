@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "BossViewController.h"
 
-@interface BossHelperViewController : UIViewController {
+@interface BossHelperViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UITableView* tableViewRecent;
     IBOutlet UILabel* lblBalance;
+    IBOutlet UILabel* lblOverview;
     IBOutlet UITextField* txtFldAmount;
+    IBOutlet UIActivityIndicatorView *actIndicatorViewMain;
     
 }
 @property (strong, nonatomic) NSString* helperId;
+@property (strong, nonatomic) NSString* name;
 @property (assign, nonatomic) float balance;
 @property (strong, nonatomic) NSMutableArray* arrayRecent;
 

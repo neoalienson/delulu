@@ -72,6 +72,10 @@
     [format setDateFormat:@"dd-MM-yyyy"];
 
     // Configure Cell
+    UIImageView *img = (UIImageView*)[cell.contentView viewWithTag:10];
+    img.image = [UIImage imageNamed:([@"deposit" compare:obj[@"type"]] == 0) ?
+                 @"transaction" : @"shopping"];
+    
     UILabel *label = (UILabel *)[cell.contentView viewWithTag:20];
     [label setText:[NSString stringWithFormat:@"%@",  [format stringFromDate:date]]];
     
