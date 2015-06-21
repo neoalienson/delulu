@@ -147,7 +147,8 @@ var SignUp = React.createClass({
 
     },
     handleUserCreated : function() {
-        this.context.router.transitionTo("/#/helper");
+        //this.context.router.transitionTo("/helper");
+        window.location.href="/tableResult.html"
     }
 });
 

@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "css-loader": "^0.14.5",
+    "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "jsx-loader": "^0.13.2",
     "less": "^2.5.1",

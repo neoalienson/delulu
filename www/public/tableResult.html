@@ -1,8 +1,7 @@
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="deulu.css">
 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js' ></script>
 
@@ -10,12 +9,48 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 	<script src="//www.parsecdn.com/js/parse-1.4.2.min.js"></script>
-
 	<script src="js/tableResult.js"></script>
 </head>
 
 <body>
-	<div class='padding: 4px;' >
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-expanded="false">Report <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/report.html">Overview</a></li>
+                            <li><a href="/tableResult.html">Details</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="/#/signout">Sign out</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-expanded="false">Help <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#/about">About</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 	<div class='h2' style='padding-left: 16px;' >Expense Report - Details</div>
 	<div class='h4' style='padding-left: 16px;' >Week of June 20, 2015</div>
 
@@ -29,7 +64,7 @@
 	                <th>Region Average</th>
 	            </tr>
 	        </thead>
-	 
+
 	        <tfoot>
 	            <tr>
 	                <th>Date</th>
@@ -38,10 +73,10 @@
 	                <th>Region Average</th>
 	            </tr>
 	        </tfoot>
-	 
+
 	        <tbody id='tblBody'>
 	        </tbody>
-	    </table>		
+	    </table>
 	</div>
 
 	<div class='h4' style='padding-left: 16px; padding-top: 8px; display:none;' id='divDepositMoney' ></div>
