@@ -289,6 +289,21 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-vg-Q24">
+                                        <rect key="frame" x="16" y="308" width="382" height="248"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chart" translatesAutoresizingMaskIntoConstraints="NO" id="INi-1Y-Cuw">
+                                                <rect key="frame" x="4" y="106" width="375" height="101"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Compare with others with similar family size and number of meail per week" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu8-nr-Om0">
+                                                <rect key="frame" x="25" y="19" width="328" height="79"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </view>
                         </subviews>
@@ -330,13 +345,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujc-fW-Tzm">
-                                <rect key="frame" x="16" y="109" width="382" height="164"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Hi,Please install dhelp from AppStore (http://store.apple.com) or GooglePlay (http://play.google.com/). And then open this link  dhelper://bnc.lt/l/5npsjkE_IY</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnK-wL-No5">
                                 <rect key="frame" x="16" y="278" width="382" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -347,6 +355,13 @@
                                     <action selector="copyToClipboard:" destination="yCo-Mn-R1a" eventType="touchUpInside" id="eOC-Ob-xAB"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujc-fW-Tzm">
+                                <rect key="frame" x="16" y="109" width="382" height="164"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Hi,Please install dhelp from AppStore (http://store.apple.com) or GooglePlay (http://play.google.com/). And then open this link  dhelper://bnc.lt/l/5npsjkE_IY</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.76470588240000004" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -392,7 +407,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rdo-mo-4ah" id="6J7-Wu-y4J">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="26512612-97E9-426E-944E-E16DC4146ECA" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-nO-eCv">
+                                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="F5ECD04B-ECA1-4651-9141-5EAB31A35003" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-nO-eCv">
                                                     <rect key="frame" x="8" y="3" width="40" height="37"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaL-bg-Aua">
@@ -462,9 +477,15 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hKI-60-ZSS">
                                 <rect key="frame" x="188" y="350" width="37" height="37"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chart" translatesAutoresizingMaskIntoConstraints="NO" id="C5C-5P-Tfk">
-                                <rect key="frame" x="16" y="591" width="383" height="133"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugI-E9-4F5">
+                                <rect key="frame" x="17" y="601" width="382" height="114"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chart-17" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-f1-X0D">
+                                        <rect key="frame" x="-1" y="8" width="375" height="101"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.76470588240000004" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -830,7 +851,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="26512612-97E9-426E-944E-E16DC4146ECA" width="248" height="223">
+        <image name="F5ECD04B-ECA1-4651-9141-5EAB31A35003" width="248" height="223">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -4576,6 +4597,7 @@ A2pcAANqYQAAAAAAAAQBAAAAAAAAAEIAAAAAAAAAAAAAAAAAA2pjA
         <image name="Welcome" width="586" height="100"/>
         <image name="ad" width="694" height="328"/>
         <image name="chart" width="872" height="229"/>
+        <image name="chart-17" width="1523" height="725"/>
         <image name="head-01" width="521" height="521"/>
         <image name="shopping" width="248" height="223"/>
         <image name="up" width="64" height="64"/>

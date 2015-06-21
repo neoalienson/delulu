@@ -9,7 +9,7 @@
 #import "HelperViewController.h"
 #import <Parse/Parse.h>
 #import "HelperNewExpenseViewController.h"
-
+#import "AppDelegate.h"
 @interface HelperViewController ()
 
 @end
@@ -20,8 +20,11 @@
     NSLog(@"loading data");
     self.arrayRecent = [NSMutableArray new];
     
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
     PFQuery *query = [PFQuery queryWithClassName:@"Ledger"];
-    [query whereKey:@"household" equalTo:[PFObject objectWithoutDataWithClassName:@"Household" objectId:@"rLooCSzCeV"]];
+//    [query whereKey:@"household" equalTo:[PFObject objectWithoutDataWithClassName:@"Household" objectId:appDelegate.householdId]];
+        [query whereKey:@"createdBy" equalTo:[PFObject objectWithoutDataWithClassName:@"Users" objectId:appDelegate.userId]];
     [query orderByDescending:@"date"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

@@ -25,8 +25,6 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Household"];
     
-    appDelegate.householdId = @"adoCJNucQR";
-    
     [query getObjectInBackgroundWithId:appDelegate.householdId block:^(PFObject *household, NSError *error) {
         self->lblWelcome.text = [NSString stringWithFormat:@"Welcome to %@", household[@"name"]];
     }];
