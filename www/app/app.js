@@ -28,6 +28,7 @@ var routes = (
         <Route name="about" path="/about" handler={require('./about')}/>
         <Route name="signin" path="/signin" handler={require('./signin')}/>
         <Route name="household" path="/household/:id" handler={require('./household')}/>
+        <Route name="signout" path="/signout" handler={require('./signout')}/>
     </Route>
 );
 
