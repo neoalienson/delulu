@@ -8,17 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B503E8B01B3559DA0062B767 /* HelperSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B503E8AF1B3559DA0062B767 /* HelperSignUpViewController.m */; };
-		B503E8B81B3578B40062B767 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8B21B3578B40062B767 /* Bolts.framework */; };
-		B503E8B91B3578B40062B767 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8B31B3578B40062B767 /* Parse.framework */; };
-		B503E8BA1B3578B40062B767 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8B41B3578B40062B767 /* ParseCrashReporting.framework */; };
-		B503E8BB1B3578B40062B767 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8B51B3578B40062B767 /* ParseFacebookUtils.framework */; };
-		B503E8BC1B3578B40062B767 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8B61B3578B40062B767 /* ParseFacebookUtilsV4.framework */; };
-		B503E8BD1B3578B40062B767 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8B71B3578B40062B767 /* ParseUI.framework */; };
-		B503E8BF1B357DAC0062B767 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8BE1B357DAC0062B767 /* libsqlite3.dylib */; };
 		B503E8C31B357DE20062B767 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8C21B357DE20062B767 /* AudioToolbox.framework */; };
 		B503E8C51B357E050062B767 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B503E8C41B357E050062B767 /* MobileCoreServices.framework */; };
 		B503E8C71B35B2250062B767 /* UICustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B503E8C61B35B2250062B767 /* UICustomTextField.m */; };
 		B503E8CA1B363B8C0062B767 /* BossHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B503E8C91B363B8C0062B767 /* BossHelperViewController.m */; };
+		B5189FA71CD4AB4C001F283E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5189FA51CD4AB4C001F283E /* Bolts.framework */; };
+		B5189FA81CD4AB4C001F283E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5189FA61CD4AB4C001F283E /* Parse.framework */; };
 		B55C360D1B35431C00A82A84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C360C1B35431C00A82A84 /* main.m */; };
 		B55C36101B35431C00A82A84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C360F1B35431C00A82A84 /* AppDelegate.m */; };
 		B55C36161B35431C00A82A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C36141B35431C00A82A84 /* Main.storyboard */; };
@@ -64,6 +59,7 @@
 		B55C36A21B3548D400A82A84 /* BossInviteHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36A11B3548D400A82A84 /* BossInviteHelperViewController.m */; };
 		B55C36A51B35496900A82A84 /* HelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36A41B35496900A82A84 /* HelperViewController.m */; };
 		B55C36A81B3549EA00A82A84 /* HelperNewExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36A71B3549EA00A82A84 /* HelperNewExpenseViewController.m */; };
+		B57D705C1C94780200C5F5CC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B57D705B1C94780200C5F5CC /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,14 +81,15 @@
 		B503E8B51B3578B40062B767 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		B503E8B61B3578B40062B767 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		B503E8B71B3578B40062B767 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		B503E8BE1B357DAC0062B767 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B503E8C01B357DB40062B767 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		B503E8C21B357DE20062B767 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B503E8C41B357E050062B767 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B503E8C61B35B2250062B767 /* UICustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomTextField.m; sourceTree = "<group>"; };
 		B503E8C81B363B8C0062B767 /* BossHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossHelperViewController.h; sourceTree = "<group>"; };
 		B503E8C91B363B8C0062B767 /* BossHelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BossHelperViewController.m; sourceTree = "<group>"; };
-		B55C36071B35431C00A82A84 /* dhelper3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dhelper3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5189FA51CD4AB4C001F283E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B5189FA61CD4AB4C001F283E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B55C36071B35431C00A82A84 /* Deulu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deulu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55C360B1B35431C00A82A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55C360C1B35431C00A82A84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B55C360E1B35431C00A82A84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +179,7 @@
 		B55C36A41B35496900A82A84 /* HelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperViewController.m; sourceTree = "<group>"; };
 		B55C36A61B3549EA00A82A84 /* HelperNewExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperNewExpenseViewController.h; sourceTree = "<group>"; };
 		B55C36A71B3549EA00A82A84 /* HelperNewExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperNewExpenseViewController.m; sourceTree = "<group>"; };
+		B57D705B1C94780200C5F5CC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,16 +187,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5189FA71CD4AB4C001F283E /* Bolts.framework in Frameworks */,
+				B57D705C1C94780200C5F5CC /* libsqlite3.tbd in Frameworks */,
 				B503E8C51B357E050062B767 /* MobileCoreServices.framework in Frameworks */,
 				B503E8C31B357DE20062B767 /* AudioToolbox.framework in Frameworks */,
-				B503E8BF1B357DAC0062B767 /* libsqlite3.dylib in Frameworks */,
+				B5189FA81CD4AB4C001F283E /* Parse.framework in Frameworks */,
 				B55C36961B35433600A82A84 /* Branch.framework in Frameworks */,
-				B503E8B91B3578B40062B767 /* Parse.framework in Frameworks */,
-				B503E8BD1B3578B40062B767 /* ParseUI.framework in Frameworks */,
-				B503E8BC1B3578B40062B767 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				B503E8B81B3578B40062B767 /* Bolts.framework in Frameworks */,
-				B503E8BB1B3578B40062B767 /* ParseFacebookUtils.framework in Frameworks */,
-				B503E8BA1B3578B40062B767 /* ParseCrashReporting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +223,12 @@
 		B55C35FE1B35431C00A82A84 = {
 			isa = PBXGroup;
 			children = (
+				B5189FA51CD4AB4C001F283E /* Bolts.framework */,
+				B5189FA61CD4AB4C001F283E /* Parse.framework */,
+				B57D705B1C94780200C5F5CC /* libsqlite3.tbd */,
 				B503E8C41B357E050062B767 /* MobileCoreServices.framework */,
 				B503E8C21B357DE20062B767 /* AudioToolbox.framework */,
 				B503E8C01B357DB40062B767 /* CoreAudio.framework */,
-				B503E8BE1B357DAC0062B767 /* libsqlite3.dylib */,
 				B55C36091B35431C00A82A84 /* dhelper3 */,
 				B55C36231B35431C00A82A84 /* dhelper3Tests */,
 				B55C36081B35431C00A82A84 /* Products */,
@@ -242,7 +238,7 @@
 		B55C36081B35431C00A82A84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B55C36071B35431C00A82A84 /* dhelper3.app */,
+				B55C36071B35431C00A82A84 /* Deulu.app */,
 				B55C36201B35431C00A82A84 /* dhelper3Tests.xctest */,
 			);
 			name = Products;
@@ -414,7 +410,7 @@
 			);
 			name = Deulu;
 			productName = dhelper3;
-			productReference = B55C36071B35431C00A82A84 /* dhelper3.app */;
+			productReference = B55C36071B35431C00A82A84 /* Deulu.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B55C361F1B35431C00A82A84 /* dhelper3Tests */ = {
@@ -669,6 +665,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/branch",
 					"$(PROJECT_DIR)/parse-library-1.7.4",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = dhelper3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -684,6 +681,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/branch",
 					"$(PROJECT_DIR)/parse-library-1.7.4",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = dhelper3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
