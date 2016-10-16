@@ -19,7 +19,6 @@
 		B55C36161B35431C00A82A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C36141B35431C00A82A84 /* Main.storyboard */; };
 		B55C36181B35431C00A82A84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55C36171B35431C00A82A84 /* Images.xcassets */; };
 		B55C361B1B35431C00A82A84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55C36191B35431C00A82A84 /* LaunchScreen.xib */; };
-		B55C36271B35431C00A82A84 /* dhelper3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36261B35431C00A82A84 /* dhelper3Tests.m */; };
 		B55C36761B35433600A82A84 /* BNCEncodingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36351B35433600A82A84 /* BNCEncodingUtils.m */; };
 		B55C36771B35433600A82A84 /* BNCError.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36371B35433600A82A84 /* BNCError.m */; };
 		B55C36781B35433600A82A84 /* BNCLinkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B55C36391B35433600A82A84 /* BNCLinkCache.m */; };
@@ -62,16 +61,6 @@
 		B57D705C1C94780200C5F5CC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B57D705B1C94780200C5F5CC /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B55C36211B35431C00A82A84 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B55C35FF1B35431C00A82A84 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B55C36061B35431C00A82A84;
-			remoteInfo = dhelper3;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		B503E8AE1B3559DA0062B767 /* HelperSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperSignUpViewController.h; sourceTree = "<group>"; };
 		B503E8AF1B3559DA0062B767 /* HelperSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperSignUpViewController.m; sourceTree = "<group>"; };
@@ -97,7 +86,6 @@
 		B55C36151B35431C00A82A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B55C36171B35431C00A82A84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B55C361A1B35431C00A82A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B55C36201B35431C00A82A84 /* dhelper3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dhelper3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55C36251B35431C00A82A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55C36261B35431C00A82A84 /* dhelper3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dhelper3Tests.m; sourceTree = "<group>"; };
 		B55C36331B35433600A82A84 /* BNCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNCConfig.h; sourceTree = "<group>"; };
@@ -196,13 +184,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B55C361D1B35431C00A82A84 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -239,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				B55C36071B35431C00A82A84 /* Deulu.app */,
-				B55C36201B35431C00A82A84 /* dhelper3Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -413,24 +393,6 @@
 			productReference = B55C36071B35431C00A82A84 /* Deulu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B55C361F1B35431C00A82A84 /* dhelper3Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B55C362D1B35431C00A82A84 /* Build configuration list for PBXNativeTarget "dhelper3Tests" */;
-			buildPhases = (
-				B55C361C1B35431C00A82A84 /* Sources */,
-				B55C361D1B35431C00A82A84 /* Frameworks */,
-				B55C361E1B35431C00A82A84 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B55C36221B35431C00A82A84 /* PBXTargetDependency */,
-			);
-			name = dhelper3Tests;
-			productName = dhelper3Tests;
-			productReference = B55C36201B35431C00A82A84 /* dhelper3Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -442,10 +404,7 @@
 				TargetAttributes = {
 					B55C36061B35431C00A82A84 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					B55C361F1B35431C00A82A84 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = B55C36061B35431C00A82A84;
+						DevelopmentTeam = 37J588435Y;
 					};
 				};
 			};
@@ -463,7 +422,6 @@
 			projectRoot = "";
 			targets = (
 				B55C36061B35431C00A82A84 /* Deulu */,
-				B55C361F1B35431C00A82A84 /* dhelper3Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -476,13 +434,6 @@
 				B55C36161B35431C00A82A84 /* Main.storyboard in Resources */,
 				B55C361B1B35431C00A82A84 /* LaunchScreen.xib in Resources */,
 				B55C36181B35431C00A82A84 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B55C361E1B35431C00A82A84 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,23 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B55C361C1B35431C00A82A84 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B55C36271B35431C00A82A84 /* dhelper3Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B55C36221B35431C00A82A84 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B55C36061B35431C00A82A84 /* Deulu */;
-			targetProxy = B55C36211B35431C00A82A84 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B55C36141B35431C00A82A84 /* Main.storyboard */ = {
@@ -661,6 +596,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 37J588435Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/branch",
@@ -676,6 +613,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 37J588435Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/branch",
@@ -684,34 +623,6 @@
 				INFOPLIST_FILE = dhelper3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B55C362E1B35431C00A82A84 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = dhelper3Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dhelper3.app/dhelper3";
-			};
-			name = Debug;
-		};
-		B55C362F1B35431C00A82A84 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = dhelper3Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dhelper3.app/dhelper3";
 			};
 			name = Release;
 		};
@@ -732,15 +643,6 @@
 			buildConfigurations = (
 				B55C362B1B35431C00A82A84 /* Debug */,
 				B55C362C1B35431C00A82A84 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B55C362D1B35431C00A82A84 /* Build configuration list for PBXNativeTarget "dhelper3Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B55C362E1B35431C00A82A84 /* Debug */,
-				B55C362F1B35431C00A82A84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
